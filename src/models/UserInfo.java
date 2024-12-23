@@ -20,7 +20,7 @@ public class UserInfo {
             if (password == null || password.length() > 20 || !password.matches("^[a-zA-Z0-9_]+$")){
                 throw new WrongPasswordException("Login must be less than 20 characters and contain only letters, digits, and underscores.");
             }
-            if (password.equals(confrim_password)){
+            if (!password.equals(confrim_password)){
                 throw new WrongPasswordException("Passwords must be equal");
             }
     }
